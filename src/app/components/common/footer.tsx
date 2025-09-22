@@ -1,5 +1,6 @@
 import Image from "next/image"
-import { MapPin, Phone, Mail, Instagram, Facebook } from 'lucide-react'
+import { MapPin, Phone, Mail, Instagram, Facebook, } from 'lucide-react'
+import Link from "next/link"
 
 export default function Footer(){
     return(
@@ -30,12 +31,24 @@ export default function Footer(){
                         Quick Links
                     </div>
                     <div className="flex flex-col gap-4 font-primary text-white text-lg">
-                        <div className="hover:underline font-medium">Home</div>
-                        <div className="hover:underline font-medium">About Us</div>
-                        <div className="hover:underline font-medium">AAC Blocks</div>
-                        <div className="hover:underline font-medium">Mortar</div>
-                        <div className="hover:underline font-medium">Sustainability</div>
-                        <div className="hover:underline font-medium">Contact</div>
+                        <Link
+                        href="/"
+                        className="hover:underline font-medium">Home</Link>
+                        <Link
+                        href="/about-us"
+                        className="hover:underline font-medium">About Us</Link>
+                        <Link
+                        href="/aac-block"
+                        className="hover:underline font-medium">AAC Blocks</Link>
+                        <Link
+                        href="/block-joining-mortar"
+                        className="hover:underline font-medium">Mortar</Link>
+                        <Link
+                        href="/sustainability"
+                        className="hover:underline font-medium">Sustainability</Link>
+                        <Link
+                        href="/contact"
+                        className="hover:underline font-medium">Contact</Link>
 
                     </div>
                     
