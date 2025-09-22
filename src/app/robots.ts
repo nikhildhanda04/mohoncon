@@ -5,7 +5,7 @@ export function GET() {
     [
       "User-agent: *",
       "Allow: /",
-      "Sitemap: https://mohonconbuilds.co.in/sitemap.xml"
+      "Sitemap: https://mohanconbuilds.co.in/sitemap.xml"
     ].join('\n'),
     {
       headers: {

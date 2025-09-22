@@ -4,7 +4,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
         return[
             {
-                url: 'https://mohonconbuilds.co.in/',
+                url: 'https://mohanconbuilds.co.in/',
                 lastModified: new Date(),
             }
         ]
