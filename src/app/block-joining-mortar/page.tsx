@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Navbar from "../components/common/navbar"
-import {Metadata} from "next"
+
 import Hero from "../components/common/hero"
 import Info from "../components/bjm/info"
 import TabInfo from "../components/bjm/tabinfo"
@@ -11,10 +11,7 @@ import { motion } from 'framer-motion'
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 
-export const metadata: Metadata = {
-    title: "Block Joining Mortar | Mohoncon Builds",
-    description: "Discover the benefits of using Mohoncon Builds' Block Joining Mortar for your AAC block construction projects. Our high-quality mortar ensures strong adhesion, durability, and ease of application, making it the ideal choice for building solid and long-lasting structures.",
-}
+
 
 export default function BlockJoiningMortar(){
     return(
