@@ -1,16 +1,14 @@
-import { NextResponse } from 'next/server';
+// src/app/robots.ts
+import type { MetadataRoute } from "next";
 
-export function GET() {
-  return new NextResponse(
-    [
-      "User-agent: *",
-      "Allow: /",
-      "Sitemap: https://mohanconbuilds.co.in/sitemap.xml"
-    ].join('\n'),
-    {
-      headers: {
-        'Content-Type': 'text/plain',
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
       },
-    }
-  );
+    ],
+    sitemap: "https://mohanconbuilds.co.in/sitemap.xml",
+  };
 }
