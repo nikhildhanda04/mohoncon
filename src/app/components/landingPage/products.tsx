@@ -37,7 +37,7 @@ export default function Products(){
                 initial = {{ x:-50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ x:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.5}}
-                className="relative w-99 h-80 md:w-full ">
+                className="relative w-99 h-80 md:w-full md:h-full ">
                     <Image 
                     src="/prod1.webp"
                     alt="AAC BLOCKS"
