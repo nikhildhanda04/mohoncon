@@ -6,8 +6,15 @@ import About from "./components/landingPage/about";
 import How from "./components/landingPage/how";
 import Sustain from "./components/landingPage/sustain";
 import Promise from "./components/landingPage/promise";
+import { Metadata } from "next";
 import ContactForm from "./components/landingPage/contactForm";
 import Footer from "./components/common/footer";
+
+export const metadata: Metadata = {
+    title: "Home | Mohoncon Builds",
+    description: "Mohoncon Builds is a leading provider of AAC blocks and construction solutions, offering innovative, sustainable, and high-quality building materials for modern construction needs.",
+}
+
 export default function Home() {
   return (
       <>
