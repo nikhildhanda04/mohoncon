@@ -1,11 +1,17 @@
-import Image from "next/image"
+'use client'
 
+import Image from "next/image"
+import { motion } from 'framer-motion'
 export default function ContactForm(){
     return(
         <>
-        <div className="flex flex-row mx-84 mt-36 jusitfy-between rounded-xl bg-[#c1ccdb]">
+        <motion.div 
+        initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5,}}
+        className="flex flex-row mx-4 md:mx-84 mt-36 jusitfy-between rounded-xl bg-[#c1ccdb]">
 
-                <div className="relative w-200 h-98">
+                <div className="relative hidden md:block w-200 h-98">
                     <Image
                     src="/contactform.webp"
                     alt="fire"
@@ -14,15 +20,15 @@ export default function ContactForm(){
                     />
                 </div>
 
-            <div className="flex flex-col text-center px-20 py-12 ">
+            <div className="flex flex-col  mx-auto text-center px-8 md:px-20 py-12 ">
 
-                <div className="font-primary text-5xl font-bold text-gray-800 ">
+                <div className="font-primary text-2xl md:text-5xl font-bold text-gray-800 ">
                     We are just a click away!
                 </div>
-                <div className="font-primary text-xl font-medium text-gray-800">
+                <div className="font-primary text-sm md:text-xl font-medium text-gray-800">
                     Let’s build something strong together 
                 </div>
-                <form className="grid grid-cols-3 gap-4 mt-12"> 
+                <form className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12"> 
 
                     <input 
                     placeholder="Name"
@@ -52,7 +58,7 @@ export default function ContactForm(){
 
             </div>
 
-        </div>
+        </motion.div>
         </>
     )
 }

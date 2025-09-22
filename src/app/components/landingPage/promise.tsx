@@ -1,25 +1,44 @@
+'use client'
+
 import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"
+import {motion} from 'framer-motion'
 
 export default function Promise(){
     return(
         <>
-        <div className="flex-col flex items-center bg-white py-12 px-68">
+        <div className="flex-col flex items-center bg-white py-12 px-4 md:px-68">
 
-            <div className="font-primary font-extrabold text-primary/[0.08] text-9xl relative top-30 ">
+            <motion.div 
+            initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5,}}
+            className="font-primary font-extrabold text-primary/[0.08] text-9xl relative top-30 ">
                 PROMISE
-            </div>
-            <div className="font-primary font-bold text-5xl text-blue-800 ">
+            </motion.div>
+            <motion.div 
+            initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5,}}
+            className="font-primary font-bold text-2xl md:text-5xl text-blue-800 ">
                 Promise
-            </div>
-            <div className="font-secondary font-light text-lg text-zinc-700 tracking-wide ">
+            </motion.div>
+            <motion.div 
+            initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5,}}
+            className="font-secondary font-light text-sm md:text-lg text-zinc-700 tracking-wide ">
                 What we stand for, is what we deliver.
-            </div>
+            </motion.div>
 
 
-            <div className="grid grid-cols-3 gap-6 mt-20 px-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20 md:px-16">
 
-                <div className="flex flex-col w-full">
+                <motion.div 
+                initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5, delay:0.2}}
+                className="flex flex-col w-full">
 
                     <div className="max-w-md w-full">
                     <Image
@@ -42,9 +61,13 @@ export default function Promise(){
                     </div>
                     </div>
 
-                </div>
+                </motion.div>
 
-                <div className="flex flex-col w-full">
+                <motion.div 
+                initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5, delay:0.3}}
+                className="flex flex-col w-full">
 
                     <div className="max-w-md w-full">
                     <Image
@@ -68,9 +91,13 @@ export default function Promise(){
                     </div>
                     </div>
 
-                </div>
+                </motion.div>
 
-                <div className="flex flex-col w-full">
+                <motion.div 
+                initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5, delay:0.4}}
+                className="flex flex-col w-full">
 
                     <div className="max-w-md w-full">
                     <Image
@@ -94,7 +121,7 @@ export default function Promise(){
                     </div>
                     </div>
 
-                </div>
+                </motion.div>
 
             </div>
         </div>

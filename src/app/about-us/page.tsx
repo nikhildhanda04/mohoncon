@@ -11,7 +11,7 @@ import Footer from "../components/common/footer";
 export default function About(){
     return(
         <>
-        <div className="flex flex-col bg-white">
+        <div className="flex flex-col bg-white overflow-clip">
 
             <div>
                 <Navbar />

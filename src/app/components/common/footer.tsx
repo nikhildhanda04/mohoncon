@@ -4,13 +4,13 @@ import { MapPin, Phone, Mail, Instagram, Facebook } from 'lucide-react'
 export default function Footer(){
     return(
         <>
-        <div className="bg-primary px-76 flex flex-col pt-8">
+        <div className="bg-primary px-8 md:px-76 text-center md:text-start flex flex-col pt-8">
 
-            <div className="flex flex-row border-b border-white justify-between gap-26 py-8">
+            <div className="flex flex-col md:flex-row border-b border-white justify-between gap-26 py-8">
 
                 <div className="flex flex-col gap-16">
 
-                    <div className="relative w-28 h-28">
+                    <div className="relative mx-auto w-28 h-28">
                         <Image 
                         src="/footerlogo.webp"
                         alt=""
@@ -18,7 +18,7 @@ export default function Footer(){
                         className="object-cover"
                         />
                     </div>
-                    <div className="text-white font-primary text-xl">
+                    <div className="text-white font-primary text-base md:text-xl">
                          Mohancon Builds founded in 2025 is one of the largest integrated AAC block manufacturers in India. 
                     </div>
 
@@ -41,37 +41,37 @@ export default function Footer(){
                     
                 </div>
 
-                <div className="flex flex-col gap-12 items-start text-center">
+                <div className="flex flex-col gap-12 items-center md:items-start text-center">
 
                     <div className="font-primary font-bold text-white text-xl">
                         Address
                     </div>
                     <div className="flex flex-col gap-4 font-primary text-white text-lg">
 
-                        <div className="flex flex-row items-center gap-6">
+                        <div className="flex flex-col md:flex-row items-center gap-6">
                             <div>
                                 <MapPin fill="white" color="#299191" size="30"/>
                             </div>
-                            <div className="text-left ">
+                            <div className="md:text-left text-center text-sm md:text-base ">
                                 Mohancon Builds Pvt.Ltd. Ralhan Farms, Opp. Indian oil petrol pump, Ichawar road, Sehore (MP) 466001 
                             </div>
                         </div>
 
-                                                <div className="flex flex-row items-center gap-6">
+                                                <div className="flex flex-col md:flex-row items-center gap-6">
                             <div>
                                 <Phone fill="white" color="#299191" size="30"/>
                             </div>
-                            <div className="text-left font-secondary font-light ">
+                            <div className="md:text-left text-center text-sm md:text-base  font-secondary font-light ">
                                 Mobile: +91 9131275489 <br />
                                 Mobile: +91 9243115489
                             </div>
                         </div>
 
-                                                <div className="flex flex-row items-center gap-6">
+                                                <div className="flex flex-col md:flex-row items-center gap-6">
                             <div>
                                 <Mail fill="white" color="#299191" size="30"/>
                             </div>
-                            <div className="text-left">
+                            <div className="md:text-left text-center text-sm md:text-base ">
                                 sales@mohanconbuilds.co.in
                             </div>
                         </div>
@@ -90,10 +90,10 @@ export default function Footer(){
 
                     <div className="flex flex-row gap-3">
 
-                        <div className="bg-white p-1 rounded-full">
+                        <div className="bg-white md:p-1 p-3 rounded-full">
                             <Instagram color="#299191" size="20"/>
                         </div>
-                        <div className="bg-white p-1 rounded-full">
+                        <div className="bg-white md:p-1 p-3 rounded-full">
                             <Facebook color="#299191"  size="20"/>
                         </div>
 

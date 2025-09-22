@@ -7,7 +7,7 @@ import Footer from "../components/common/footer";
 export default function Contact() {
   return (
       <>
-      <div className="flex flex-col">
+      <div className="flex flex-col overflow-clip">
 
         <div className="z-99">
         <Navbar />

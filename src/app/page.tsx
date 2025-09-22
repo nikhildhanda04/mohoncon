@@ -11,7 +11,7 @@ import Footer from "./components/common/footer";
 export default function Home() {
   return (
       <>
-      <div className="flex flex-col bg-white">
+      <div className="flex flex-col bg-white overflow-clip">
 
         <div className="z-99">
           <Navbar />
@@ -19,7 +19,7 @@ export default function Home() {
 
         <div>
           <Hero />
-          <div className="relative -top-20 z-99">
+          <div className="relative -top-20 z-97">
           <Stats />
           </div>
         </div>

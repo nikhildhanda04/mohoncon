@@ -1,14 +1,22 @@
+'use client'
+
 import Image from "next/image"
+
+import { motion } from 'framer-motion'
 import { Instagram, Facebook } from 'lucide-react'
 
 export default function ContactForm(){
     return(
         <>
-        <div className="bg-stone-200 w-full py-36 px-68">
+        <div className="bg-stone-200  w-full py-4 md:py-36 px-4 md:px-68">
 
-            <div className="flex flex-row w-full justify-center">
+            <motion.div 
+             initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7}}
+            className="flex flex-row w-full justify-center">
 
-                <div className="relative w-[25vw] z-99 ">
+                <div className="relative hidden md:block w-[25vw] z-99 ">
                     <Image 
                     src="/contect.webp"
                     alt=""
@@ -16,12 +24,12 @@ export default function ContactForm(){
                     className="object-cover rounded-l-lg"
                     />
                 </div>
-                <form className="flex rounded-lg font-primary text-white flex-col gap-10 bg-primary p-8">
+                <form className="flex rounded-lg font-primary text-white flex-col gap-10 bg-primary w-full p-9 md:p-8">
 
-                    <div className="font-bold text-4xl">
+                    <div className="font-bold text-xl md:text-4xl">
                         Get In Touch
                     </div>
-                    <div className="flex flex-row gap-28">
+                    <div className="flex flex-col md:flex-row gap-12 md:gap-28">
 
                         <div className="flex flex-col">
 
@@ -48,7 +56,7 @@ export default function ContactForm(){
 
                     </div>
 
-                      <div className="flex flex-row gap-28">
+                      <div className="flex flex-col md:flex-row gap-12 md:gap-28">
 
                         <div className="flex flex-col">
 
@@ -114,7 +122,7 @@ export default function ContactForm(){
 
 
 
-            </div>
+            </motion.div>
 
         </div>
         </>

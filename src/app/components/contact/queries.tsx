@@ -1,4 +1,7 @@
+'use client'
+
 import Qna from "./qna";
+import { motion } from 'framer-motion'
 
 export default function Queries() {
     const queries = [
@@ -23,21 +26,31 @@ export default function Queries() {
     return (
         <>
             <div className="bg-gray-100 w-full py-16">
-                <div className="max-w-6xl mx-auto px-6">
+                <motion.div 
+                
+                className="max-w-6xl mx-auto px-6">
                     {/* Header */}
-                    <div className="text-center mb-16">
-                        <h2 className="font-primary text-4xl md:text-5xl text-primary font-bold tracking-tight">
+                    <motion.div 
+                     initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7}}
+                    className="text-center mb-16">
+                        <h2 className="font-primary text-2xl md:text-5xl text-primary font-bold tracking-tight">
                             QUESTIONS? WE GOT YOU COVERED
                         </h2>
-                    </div>
+                    </motion.div>
                     
                     {/* FAQ Accordion */}
-                    <div className="max-w-4xl mx-auto">
+                    <motion.div
+                     initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7, delay:0.1}}
+                    className="max-w-4xl mx-auto">
                         {queries.map((query, index) => (
                             <Qna key={index} question={query.question} answer={query.answer} />
                         ))}
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </div>
         </>
     );

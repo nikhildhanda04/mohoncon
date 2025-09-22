@@ -1,31 +1,54 @@
+'use client'
+
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
+import {motion} from 'framer-motion'
 
 export default function Sustain(){
     return(
         <>
-        <div className="flex-col flex items-center bg-white py-12 px-68">
+        <div className="flex-col flex items-center bg-white py-12 px-4 md:px-68">
 
-            <div className="font-primary font-extrabold text-primary/[0.08] text-9xl relative top-30 ">
+            <motion.div 
+            initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5,}}
+            className="font-primary font-extrabold text-primary/[0.08] text-9xl relative top-30 ">
                 SUSTAINABILITY
-            </div>
-            <div className="font-primary font-bold text-5xl text-blue-800 ">
+            </motion.div>
+            <motion.div
+            initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5,}}
+            className="font-primary font-bold text-2xl md:text-5xl text-blue-800 ">
                 Green & Sustainability 
-            </div>
-            <div className="font-secondary font-light text-lg text-zinc-700 tracking-wide ">
+            </motion.div>
+            <motion.div 
+            initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5,}}
+            className="font-secondary font-light text-sm text-center md:text-lg text-zinc-700 tracking-wide ">
                 What we stand for, is what we deliver.
-            </div>
+            </motion.div>
 
-            <div className="font-secondary font-light text-sm text-center mt-16 px-16 text-zinc-700">
+            <motion.div 
+            initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7,}}
+            className="font-secondary font-light text-xs md:text-sm text-center mt-16 md:px-16 text-zinc-700">
                  We are committed to creating eco-friendly building solutions that minimize environmental impact at every stage, from sourcing sustainable raw materials to manufacturing energy-efficient products.<br />
                  <br />
                 Our focus on green technology and waste reduction helps builders create structures that are not only strong and durable but also contribute to a healthier planet for future generations.
 
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-4 gap-6 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12">
 
-                <div className="group flex flex-col hover:bg-primary items-center text-center gap-4 shadow-[3px_3px_12px_0px_rgba(0,0,0,0.3)] rounded-lg py-8 px-6">
+                <motion.div 
+                initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5,}}
+                className="group flex flex-col hover:bg-primary items-center text-center gap-4 shadow-[3px_3px_12px_0px_rgba(0,0,0,0.3)] rounded-lg py-8 px-6">
                 <div className="relative w-25 h-25">
                     <Image
                     src="/fire.svg"
@@ -43,8 +66,12 @@ export default function Sustain(){
                 <button className="bg-primary group-hover:bg-white p-5 mt-6 rounded-lg">
                     <ArrowUpRight className="group-hover:text-primary text-white"/>
                 </button>
-                </div>
-                <div className="group flex flex-col hover:bg-primary items-center text-center gap-4 shadow-[3px_3px_12px_0px_rgba(0,0,0,0.3)] rounded-lg py-8 px-6">
+                </motion.div>
+                <motion.div 
+                initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5, delay:0.2}}
+                className="group flex flex-col hover:bg-primary items-center text-center gap-4 shadow-[3px_3px_12px_0px_rgba(0,0,0,0.3)] rounded-lg py-8 px-6">
                 <div className="relative w-35 h-25">
                     <Image
                     src="/uparrow.svg"
@@ -62,8 +89,12 @@ export default function Sustain(){
                 <button className="bg-primary group-hover:bg-white p-5 mt-6 rounded-lg">
                     <ArrowUpRight className="group-hover:text-primary text-white"/>
                 </button>
-                </div>
-                <div className="group flex flex-col hover:bg-primary items-center text-center gap-4 shadow-[3px_3px_12px_0px_rgba(0,0,0,0.3)] rounded-lg py-8 px-6">
+                </motion.div>
+                <motion.div 
+                initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5, delay:0.3}}
+                className="group flex flex-col hover:bg-primary items-center text-center gap-4 shadow-[3px_3px_12px_0px_rgba(0,0,0,0.3)] rounded-lg py-8 px-6">
                 <div className="relative w-25 h-25">
                     <Image
                     src="/drop.svg"
@@ -81,8 +112,12 @@ export default function Sustain(){
                 <button className="bg-primary group-hover:bg-white p-5 mt-6 rounded-lg">
                     <ArrowUpRight className="group-hover:text-primary text-white"/>
                 </button>
-                </div>
-                <div className="group flex flex-col hover:bg-primary items-center text-center gap-4 shadow-[3px_3px_12px_0px_rgba(0,0,0,0.3)] rounded-lg py-8 px-6">
+                </motion.div>
+                <motion.div 
+                initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5, delay:0.4}}
+                className="group flex flex-col hover:bg-primary items-center text-center gap-4 shadow-[3px_3px_12px_0px_rgba(0,0,0,0.3)] rounded-lg py-8 px-6">
                 <div className="relative w-25 h-25">
                     <Image
                     src="/box-1.svg"
@@ -100,7 +135,7 @@ export default function Sustain(){
                 <button className="bg-primary group-hover:bg-white p-5 mt-6 rounded-lg">
                     <ArrowUpRight className="group-hover:text-primary text-white"/>
                 </button>
-                </div>
+                </motion.div>
 
             </div>
 

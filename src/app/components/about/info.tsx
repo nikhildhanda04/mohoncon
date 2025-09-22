@@ -1,6 +1,7 @@
 'use client'
 import { useState } from "react";
 import Image from "next/image";
+import {motion } from 'framer-motion'
 
 export default function Info() {
   const [activeTab, setActiveTab] = useState("mission");
@@ -22,23 +23,39 @@ export default function Info() {
 
   return (
     <>
-      <div className="py-20 px-6 md:px-16 lg:px-68 flex flex-row gap-16">
+      <div className="py-20 px-6 md:px-16 lg:px-68 flex flex-col-reverse text-center md:flex-row gap-16">
         <div className="flex flex-col gap-6 w-full">
-          <div className="uppercase text-primary text-2xl">
+          <motion.div 
+          initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5,}}
+          className="uppercase text-primary text-base md:text-2xl">
             about mohoncon
-          </div>
-          <div className="font-secondary tracking-wide font-semibold text-gray-600 text-4xl">
+          </motion.div>
+          <motion.div 
+          initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5, delay:0.1}}
+          className="font-secondary tracking-wide font-semibold text-gray-600 text-2xl md:text-4xl">
             A Trend of Innovation and Precision
-          </div>
-          <div className="font-primary text-base text-zinc-700">
+          </motion.div>
+          <motion.div 
+          initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5, delay:0.2}}
+          className="font-primary text-sm md:text-base text-zinc-700">
             At Mohancon Builds, we believe that building the future starts with better choices today. <br />
             We manufacture construction materials like AAC blocks and Block Joining Mortar that are light, strong, energy-saving, and better for the environment.
-          </div>
+          </motion.div>
           
           {/* Tabbed Section */}
           <div className="mt-8">
             {/* Tab Headers */}
-            <div className="flex border-b border-gray-200">
+            <motion.div 
+            initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5, delay:0.3}}
+            className="flex border-b border-gray-200">
               <button
                 onClick={() => setActiveTab("mission")}
                 className={`px-6 py-3 font-medium font-primary text-sm transition-colors duration-200 ${
@@ -69,25 +86,33 @@ export default function Info() {
               >
                 Our Value
               </button>
-            </div>
+            </motion.div>
             
             {/* Tab Content */}
             <div className="py-6">
-              <div className="font-primary text-base text-zinc-900 leading-relaxed">
+              <motion.div 
+              initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5, delay:0.4}}
+              className="font-primary text-sm md:text-base text-zinc-900 leading-relaxed">
                 {tabContent[activeTab].description}
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
 
-        <div className="relative w-166 h-114">
+        <motion.div 
+        initial = {{ x:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ x:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.5,}}
+        className="relative w-90  h-80 md:w-166 md:h-114">
             <Image 
             src="/about.webp"
             alt=""
             fill
-            className="object-cover"
+            className="object-cover rounded-lg"
             />
-        </div>
+        </motion.div>
       </div>
     </>
   );

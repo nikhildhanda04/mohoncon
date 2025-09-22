@@ -1,4 +1,7 @@
+'use client'
+
 import Qna from "./qna";
+import { motion } from 'framer-motion'
 
 export default function Queries() {
     const queries = [
@@ -22,7 +25,11 @@ export default function Queries() {
 
     return (
         <>
-            <div className=" w-full py-16">
+            <motion.div 
+            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7, delay:0.4}}
+            className=" w-full py-16">
                 <div className="max-w-6xl mx-auto px-6">
                     {/* Header */}
                    
@@ -34,7 +41,7 @@ export default function Queries() {
                         ))}
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </>
     );
 }

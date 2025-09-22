@@ -1,7 +1,12 @@
+'use client'
+
 import Tabs from "../common/tabs";
+import Link from "next/link";
 import './tab.css'
 import Queries from "./queries";
+import Calculator from "./calculator";
 import Image from "next/image";
+import { motion } from 'framer-motion'
 import { ArrowRight } from "lucide-react";
 
 export default function HomePage() {
@@ -227,9 +232,10 @@ export default function HomePage() {
   
   const tabs = [
     { id: "benefits", label: "BENEFITS" },
+    { id: "calculator", label: "AMOUNT CALCULATOR" },
     { id: "technical", label: "TECHNICAL SPECIFICATIONS" },
     { id: "sizes", label: "SIZES OFFERED" },
-    { id: "use-cases", label: "IDEAL USE CASES" },
+    { id: "use-cases", label: "USE CASES" },
     { id: "faqs", label: "FAQS" },
   ];
 
@@ -237,19 +243,31 @@ export default function HomePage() {
     <main>
       <Tabs tabs={tabs} />
 
-      <section id="benefits" className="flex-col bg flex items-center bg-white py-12 px-72">
+      <section id="benefits" className="flex-col bg flex items-center bg-white py-12 md:px-72">
         
-            <div className="font-primary font-extrabold text-white/[0.08] px-68 text-9xl relative top-30 ">
+            <motion.div 
+            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7,}}
+            className="font-primary font-extrabold text-white/[0.08] md:px-68 text-9xl relative top-30 ">
                BENEFITS
-            </div>
-            <div className="font-primary text-white font-bold text-5xl px-68 text-white-800 ">
+            </motion.div>
+            <motion.div
+            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7,}}
+            className="font-primary text-white font-bold text-2xl md:text-5xl md:px-68 text-white-800 ">
                Benefits
-            </div>
-                <div className="grid grid-cols-2 gap-8 mt-20 justify-between">
+            </motion.div>
+                <motion.div 
+                initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7, delay:0.3}}
+                className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20 justify-between">
                 {features.map((feature) => (
-                    <div key={feature.id} className="flex flex-row gap-4">
-                    <div className="p-4 bg-white rounded-full">
-                        <div className="relative w-16 h-16">
+                    <div key={feature.id} className="flex items-center text-center flex-col md:flex-row gap-4">
+                    <div className="p-4 bg-white w-fit rounded-full">
+                        <div className="relative w-8 h-8 md:w-16 md:h-16">
                         <Image 
                             src={feature.icon}
                             alt={feature.title}
@@ -260,40 +278,74 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex text-white flex-col gap-2">
-                        <div className="font-primary text-2xl font-medium">
+                        <div className="font-primary text-lg md:text-2xl font-medium">
                         {feature.title}
                         </div>
-                        <div className="font-secondary font-light">
+                        <div className="font-secondary text-xs md:px-0 px-12 md:text-base font-light">
                         {feature.description}
                         </div>
                     </div>
                     </div>
                 ))}
-                </div>
+                </motion.div>
+      </section>
+2
+      <section id="calculator" className="flex-col flex  items-center bg-white py-12 md:px-72">
+            <motion.div 
+            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7,}}
+            className="font-primary font-extrabold text-primary/[0.08] md:px-68 text-9xl relative top-30 ">
+               CALCULATOR
+            </motion.div>
+            <motion.div
+            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7,}}
+            className="font-primary text-blue-800 font-bold text-2xl md:text-5xl md:px-68 text-white-800 ">
+              AAC Blocks Calculator
+            </motion.div>
+
+        <div className="">
+  <Calculator />
+        </div>
+     
       </section>
 
-      <section id="technical" className="flex-col  flex items-center bg-white py-12 px-72">
-                <div className="font-primary font-extrabold text-primary/[0.08] px-68 text-9xl relative top-30 ">
+      <section id="technical" className="flex-col  flex items-center bg-white py-12 md:px-72">
+                <motion.div
+                initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7, delay:0.1}}
+                className="font-primary font-extrabold text-primary/[0.08] md:px-68 text-9xl relative top-30 ">
                SPECIFICATIONS
-            </div>
-            <div className="font-primary text-blue-800 font-bold text-5xl px-68 text-white-800 ">
+            </motion.div>
+            <motion.div 
+            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7, delay:0.2}}
+            className="font-primary text-blue-800 font-bold text-2xl md:text-5xl md:px-68 text-white-800 ">
                Technical Specifications
-            </div>
+            </motion.div>
             <div className="w-full overflow-x-auto">
-      <table className="w-full border-collapse border mt-20 border-primary">
+      <motion.table 
+      initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7, delay:0.3}}
+      className="w-full border-collapse border mt-20 border-primary">
     
         <thead>
           <tr className="bg-gray-100">
-            <th className="border border-primary px-4 py-3 text-left font-medium text-gray-700 min-w-48">
+            <th className="border border-primary px-1 md:px-4 py-2 text-xs md:text-base md:py-3 text-left font-medium text-gray-700 min-w-48">
               Property
             </th>
-            <th className="border border-primary px-4 py-3 text-center font-medium text-gray-700 w-20">
+            <th className="border border-primary px-1 md:px-4 py-2 text-xs md:text-base md:py-3 text-center font-medium text-gray-700 w-20">
               Unit
             </th>
-            <th className="border border-primary px-4 py-3 text-left font-medium text-gray-700 min-w-64">
+            <th className="border border-primary px-1 md:px-4 py-2 text-xs md:text-base md:py-3 text-left font-medium text-gray-700 min-w-64">
               AAC Blocks
             </th>
-            <th className="border border-primary px-4 py-3 text-left font-medium text-gray-700 min-w-64">
+            <th className="border border-primary px-1 md:px-4 py-2 text-xs md:text-base md:py-3 text-left font-medium text-gray-700 min-w-64">
               Block Joining Mortar
             </th>
           </tr>
@@ -302,46 +354,58 @@ export default function HomePage() {
         <tbody>
           {specifications.map((spec, index) => (
             <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-              <td className="border border-primary px-4 py-3 font-medium text-gray-800">
+              <td className="border border-primary px-1 md:px-4 py-1 md:py-3 text-xs md:text-base font-medium text-gray-800">
                 {spec.property}
               </td>
-              <td className="border border-primary px-4 py-3 text-center text-gray-700">
+              <td className="border border-primary px-1 md:px-4 py-1 md:py-3 text-xs md:text-base text-center text-gray-700">
                 {spec.unit}
               </td>
-              <td className="border border-primary px-4 py-3 text-gray-700">
+              <td className="border border-primary px-1 md:px-4 py-1 md:py-3 text-xs md:text-base text-gray-700">
                 {spec.aacBlocks}
               </td>
-              <td className="border border-primary px-4 py-3 text-gray-700">
+              <td className="border border-primary px-1 md:px-4 py-1 md:py-3 text-xs md:text-base text-gray-700">
                 {spec.blockJoiningMortar}
               </td>
             </tr>
           ))}
         </tbody>
-      </table>
+      </motion.table>
     </div>
       </section>
 
       <section id="sizes" className="flex-col flex items-center bg-white py-12">
-            <div className="font-primary font-extrabold text-primary/[0.08] px-68 text-9xl relative top-30 ">
+            <motion.div 
+            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7,}}
+            className="font-primary font-extrabold text-primary/[0.08] px-4 md:px-68 text-9xl relative top-30 ">
                SIZES OFFERED
-            </div>
-            <div className="font-primary text-blue-800 font-bold text-5xl px-68 text-white-800 ">
+            </motion.div>
+            <motion.div 
+            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7,}}
+            className="font-primary text-blue-800 font-bold text-2xl md:text-5xl px-4 md:px-68 text-white-800 ">
                Size Offered
-            </div>
-             <div className="w-full overflow-x-auto px-72 mt-20">
+            </motion.div>
+             <motion.div 
+             initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7, delay:0.2}}
+             className="w-full overflow-x-auto px-4 md:px-72 mt-20">
       <table className="w-full border-collapse border border-gray-400">
         <thead>
           <tr className="bg-teal-100">
-            <th className="border border-gray-400 px-4 py-3 text-center font-medium text-gray-700 w-20">
+            <th className="border border-gray-400 px-1 md:px-4 py-1 md:py-3 text-xs md:text-base text-center font-medium text-gray-700 w-20">
               Sr. No
             </th>
-            <th className="border border-gray-400 px-4 py-3 text-center font-medium text-gray-700 min-w-48">
+            <th className="border border-gray-400 px-1 md:px-4 py-1 md:py-3 text-xs md:text-base text-center font-medium text-gray-700 min-w-48">
               Dimensions (mm)
             </th>
-            <th className="border border-gray-400 px-4 py-3 text-center font-medium text-gray-700 w-32">
+            <th className="border border-gray-400 px-1 md:px-4 py-1 md:py-3 text-xs md:text-base text-center font-medium text-gray-700 w-32">
               CBM of AAC
             </th>
-            <th className="border border-gray-400 px-4 py-3 text-center font-medium text-gray-700 w-40">
+            <th className="border border-gray-400 px-1 md:px-4 py-1 md:py-3 text-xs md:text-base text-center font-medium text-gray-700 w-40">
               No. of Blocks in 1 CBM
             </th>
           </tr>
@@ -350,39 +414,53 @@ export default function HomePage() {
         <tbody>
           {cbmData.map((row, index) => (
             <tr key={row.srNo} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-              <td className="border border-gray-400 px-4 py-3 text-center text-gray-800">
+              <td className="border border-gray-400 px-1 md:px-4 py-1 md:py-3 text-xs text-center text-gray-800">
                 {row.srNo}.
               </td>
-              <td className="border border-gray-400 px-4 py-3 text-center text-gray-700 font-mono">
+              <td className="border border-gray-400 px-1 md:px-4 py-1 md:py-3 text-xs text-center text-gray-700 font-mono">
                 {row.dimensions}
               </td>
-              <td className="border border-gray-400 px-4 py-3 text-center text-gray-700 font-mono">
+              <td className="border border-gray-400 px-1 md:px-4 py-1 md:py-3 text-xs text-center text-gray-700 font-mono">
                 {row.cbm}
               </td>
-              <td className="border border-gray-400 px-4 py-3 text-center text-gray-700 font-mono">
+              <td className="border border-gray-400 px-1 md:px-4 py-1 md:py-3 text-xs text-center text-gray-700 font-mono">
                 {row.blocksInCBM}
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-    </div>
+    </motion.div>
             
       </section>
 
       <section id="use-cases" className="flex-col flex items-center bg-white py-12">
-        <div className="font-primary font-extrabold text-primary/[0.08] px-68 text-9xl relative top-30 ">
+        <motion.div 
+        initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7,}}
+        className="font-primary font-extrabold text-primary/[0.08] md:px-68 text-9xl relative top-30 ">
               USE CASES
-            </div>
-            <div className="font-primary text-blue-800 font-bold text-5xl px-68 text-white-800 ">
+            </motion.div>
+            <motion.div 
+            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7,}}
+            className="font-primary text-blue-800 font-bold text-2xl md:text-5xl  md:px-68 text-white-800 ">
                Ideal Use Cases
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-2 justify-between gap-x-20 gap-y-16 mt-20 px-72">
+            <motion.div 
+            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7,}}
+            className="grid grid-cols-1 md:grid-cols-2 justify-between gap-x-20 gap-y-16 mt-20 px-4 text-center md:text-left md:px-72">
 
-                 <div className="flex flex-row gap-4">
+                 <motion.div 
+                 
+                 className="flex flex-col items-center md:flex-row gap-4">
 
-                <div className="relative w-26 h-30">
+                <div className="relative w-12 h-16 md:w-26 md:h-30">
                     <Image 
                     src="/Hotel.webp"
                     alt=""
@@ -391,20 +469,20 @@ export default function HomePage() {
                     />
                 </div>
                 <div className="flex flex-col gap-5">
-                    <div className="font-primary font-bold text-2xl text-primary">
+                    <div className="font-primary font-bold text-lg md:text-2xl text-primary">
                     High-Rise Buildings 
                 </div>
-                <div className="font-secondary font-light text-zinc-600 text-base">
+                <div className="font-secondary font-light text-zinc-600 text-xs md:text-base">
                     Lightweight yet strong materials reduce structural load and speed up construction. 
                 </div>
                 </div>
                 
 
-            </div>
+            </motion.div>
 
-             <div className="flex flex-row gap-4">
+             <div className="flex flex-col items-center md:flex-row gap-4">
 
-                <div className="relative w-40 h-30">
+                <div className="relative w-16 h-16 md:w-40 md:h-30">
                     <Image 
                     src="/Group7.webp"
                     alt=""
@@ -413,10 +491,10 @@ export default function HomePage() {
                     />
                 </div>
                 <div className="flex flex-col gap-5">
-                    <div className="font-primary font-bold text-2xl text-primary">
+                    <div className="font-primary font-bold text-lg md:text-2xl text-primary">
                    Residential Projects 
                 </div>
-                <div className="font-secondary font-light text-zinc-600 text-base">
+                <div className="font-secondary font-light text-zinc-600 text-xs md:text-base">
                    Perfect for building modern homes with better insulation, soundproofing, and reduced material wastage. 
                 </div>
                 </div>
@@ -424,9 +502,9 @@ export default function HomePage() {
 
             </div>
 
-             <div className="flex flex-row gap-4">
+             <div className="flex flex-col items-center md:flex-row gap-4">
 
-                <div className="relative w-30 h-30">
+                <div className="relative w-16 md:w-30 h-16 md:h-30">
                     <Image 
                     src="/Layer_1.webp"
                     alt=""
@@ -435,10 +513,10 @@ export default function HomePage() {
                     />
                 </div>
                 <div className="flex flex-col gap-5">
-                    <div className="font-primary font-bold text-2xl text-primary">
+                    <div className="font-primary font-bold text-lg md:text-2xl text-primary">
                      Commercial Buildings 
                 </div>
-                <div className="font-secondary font-light text-zinc-600 text-base">
+                <div className="font-secondary font-light text-zinc-600 text-xs md:text-base">
                     Supports large-scale developments with consistent quality and faster execution. 
                 </div>
                 </div>
@@ -446,9 +524,9 @@ export default function HomePage() {
 
             </div>
 
-             <div className="flex flex-row gap-4">
+             <div className="flex flex-col items-center md:flex-row gap-4">
 
-                <div className="relative w-40 h-30">
+                <div className="relative w-20 h-20 md:w-40 md:h-30">
                     <Image 
                     src="/Group-1.webp"
                     alt=""
@@ -457,10 +535,10 @@ export default function HomePage() {
                     />
                 </div>
                 <div className="flex flex-col gap-5">
-                    <div className="font-primary font-bold text-2xl text-primary">
+                    <div className="font-primary font-bold text-lg md:text-2xl text-primary">
                     Government Buildings 
                 </div>
-                <div className="font-secondary font-light text-zinc-600 text-base">
+                <div className="font-secondary font-light text-zinc-600 text-xs md:text-base">
                      Meets high standards of durability, cost-efficiency, and sustainability for public infrastructure. 
                 </div>
                 </div>
@@ -468,9 +546,9 @@ export default function HomePage() {
 
             </div>
 
-             <div className="flex flex-row gap-4">
+             <div className="flex flex-col items-center md:flex-row gap-4">
 
-                <div className="relative w-40 h-30">
+                <div className="relative w-20 h-20 md:w-40 md:h-30">
                     <Image 
                     src="/Groupaaaa-1.webp"
                     alt=""
@@ -479,10 +557,10 @@ export default function HomePage() {
                     />
                 </div>
                 <div className="flex flex-col gap-5">
-                    <div className="font-primary font-bold text-2xl text-primary">
+                    <div className="font-primary font-bold text-lg md:text-2xl text-primary">
                     Hospitals and Care Centres 
                 </div>
-                <div className="font-secondary font-light text-zinc-600 text-base">
+                <div className="font-secondary font-light text-zinc-600 text-xs md:text-base">
                     Provides a durable, fire-resistant, comfortable and safe environment for public spaces. 
                 </div>
                 </div>
@@ -490,9 +568,9 @@ export default function HomePage() {
 
             </div>
 
-             <div className="flex flex-row gap-4">
+             <div className="flex flex-col items-center md:flex-row gap-4">
 
-                <div className="relative w-40 h-30">
+                <div className="relative w-20 h-20 md:w-40 md:h-30">
                     <Image 
                     src="/Page-1-1.webp"
                     alt=""
@@ -501,10 +579,10 @@ export default function HomePage() {
                     />
                 </div>
                 <div className="flex flex-col gap-5">
-                    <div className="font-primary font-bold text-2xl text-primary">
+                    <div className="font-primary font-bold text-lg md:text-2xl text-primary">
                      Schools & Colleges 
                 </div>
-                <div className="font-secondary font-light text-zinc-600 text-base">
+                <div className="font-secondary font-light text-zinc-600 text-xs md:text-base">
                      Safe, durable, and energy-efficient blocks that speed up building comfortable learning spaces. 
                 </div>
                 </div>
@@ -512,22 +590,40 @@ export default function HomePage() {
 
             </div>
 
-            </div>
+            </motion.div>
            
       </section>
 
       <section id="faqs" className="flex-col gbg flex items-center bg-white py-12">
-            <div className="font-primary font-extrabold text-white/[0.08] px-68 text-9xl relative top-30 ">
+            <motion.div 
+            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7,}}
+            className="font-primary font-extrabold text-white/[0.08] px-68 text-9xl relative top-30 ">
                FAQS
-            </div>
-            <div className="font-primary text-white font-bold text-5xl px-68 text-white-800 ">
+            </motion.div>
+            <motion.div
+            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7,}}
+             className="font-primary text-white font-bold text-lg md:text-5xl px-68 text-white-800 ">
                FAQs
-            </div>
+            </motion.div>
             <div>
             <Queries />
-            <div className="font-primary text-2xl hover:bg-black hover:text-white transition-all duration-200 group bg-white px-6 py-3 rounded-lg w-fit mx-auto font-medium">
+
+              <Link 
+              href="/contact"
+              >
+            <motion.div 
+            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7, delay:0.2}}
+            className="font-primary text-sm md:text-2xl hover:bg-black hover:text-white transition-all duration-200 group bg-white px-6 py-3 rounded-lg w-fit mx-auto font-medium">
                 Enquire Now <ArrowRight className="inline text-black group-hover:text-white"/>
-            </div>
+            </motion.div>  
+            </Link>
+            
             </div>
       </section>
     </main>

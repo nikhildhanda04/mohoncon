@@ -1,5 +1,7 @@
+'use client'
 import Tabs from "../common/tabs";
 import Image from "next/image";
+import { motion } from 'framer-motion'
 import Queries from "../aac/queries";
 import { ArrowRight } from "lucide-react";
 import "./tab.css"
@@ -43,14 +45,22 @@ export default function TabInfo(){
         <main>
                 <Tabs tabs={tabs} />
 
-                <section id="benifits" className="flex-col gbg flex items-center bg-white py-12 px-72">
-                  <div className="font-primary text-white font-medium text-5xl uppercase text-white-800 ">
+                <section id="benefits" className="flex-col gbg flex items-center bg-white py-12 px-4 md:px-72">
+                  <motion.div 
+                  initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7, delay:0.1}}
+                  className="font-primary text-white font-medium text-lg md:text-5xl uppercase text-white-800 ">
                    Key benefits block joining mortar 
-                  </div>
+                  </motion.div>
 
-                  <div className="grid grid-cols-3 gap-20 mt-20">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-20 mt-20">
 
-                    <div className="flex flex-col items-center gap-4">
+                    <motion.div 
+                    initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7}}
+                    className="flex flex-col items-center gap-4">
                       <div className="relative w-24 h-20">
                         <Image 
                         src="/bjm1.webp"
@@ -62,9 +72,13 @@ export default function TabInfo(){
                       <div className="font-secondary  text-white text-xl">
                         Earthquake Resistant
                       </div>
-                    </div>
+                    </motion.div>
 
-                                        <div className="flex flex-col items-center gap-4">
+                                        <motion.div
+                                                            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7}}
+                                        className="flex flex-col items-center gap-4">
                       <div className="relative w-24 h-20">
                         <Image 
                         src="/bjm2.webp"
@@ -76,9 +90,13 @@ export default function TabInfo(){
                       <div className="font-secondary  text-white text-xl">
                         Earthquake Resistant
                       </div>
-                    </div>
+                    </motion.div>
 
-                                        <div className="flex flex-col items-center gap-4">
+                                        <motion.div 
+                                                            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7}}
+                                        className="flex flex-col items-center gap-4">
                       <div className="relative w-24 h-20">
                         <Image 
                         src="/bjm3.webp"
@@ -91,9 +109,13 @@ export default function TabInfo(){
                                               
                         Shock & impact resistant
                       </div>
-                    </div>
+                    </motion.div>
 
-                                        <div className="flex flex-col items-center gap-4">
+                                        <motion.div 
+                                                            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7}}
+                                        className="flex flex-col items-center gap-4">
                       <div className="relative w-24 h-26">
                         <Image 
                         src="/bjm4.webp"
@@ -106,9 +128,13 @@ export default function TabInfo(){
                                               
                       High thermal Insulation
                       </div>
-                    </div>
+                    </motion.div>
 
-                                        <div className="flex flex-col items-center gap-4">
+                                        <motion.div 
+                                                            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7}}
+                                        className="flex flex-col items-center gap-4">
                       <div className="relative w-24 h-26">
                         <Image 
                         src="/bjm5.webp"
@@ -121,9 +147,13 @@ export default function TabInfo(){
                                               
                         Superior adhesion
                       </div>
-                    </div>
+                    </motion.div>
 
-                      <div className="flex flex-col items-center gap-4">
+                      <motion.div 
+                                          initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7}}
+                      className="flex flex-col items-center gap-4">
                       <div className="relative w-24 h-26">
                         <Image 
                         src="/bjm6.webp"
@@ -136,148 +166,181 @@ export default function TabInfo(){
                                                 
                           Excellent tensile strength
                       </div>
-                    </div>
+                    </motion.div>
 
 
                   </div>
                     
                 </section>
-                <section id="technical" className="flex-col  flex items-center bg-white py-12 px-72">
-                  <div className="font-primary font-extrabold text-primary/[0.08] px-68 text-9xl relative top-30 ">
+                <section id="technical" className="flex-col  flex items-center bg-white py-12 px-4 md:px-72">
+                  <motion.div 
+                                      initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7}}
+                  className="font-primary font-extrabold text-primary/[0.08] px-68 text-9xl relative top-30 ">
                SPECIFICATIONS
-            </div>
-            <div className="font-primary text-blue-800 font-bold text-5xl px-68 text-white-800 ">
+            </motion.div>
+            <motion.div 
+                                initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7}}
+            className="font-primary text-blue-800 font-bold text-lg md:text-5xl md:px-68 text-white-800 ">
                Technical Specifications
-            </div>\
+            </motion.div>\
                <div className="w-full max-w-2xl mt-20">
-      <table className="w-full border-collapse font-primary border border-gray-400">
+      <motion.table 
+                          initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7, delay:0.1}}
+      className="w-full border-collapse font-primary border border-gray-400">
         <tbody>
           {mortarSpecs.map((spec, index) => (
             <tr key={index}>
-              <td className="border border-primary px-4 py-3  font- text-gray-800 w-1/3">
+              <td className="border border-primary px-2 md:px-4 p-1 md:py-3 text-xs md:text-base  font- text-gray-800 w-1/3">
                 {spec.property}
               </td>
-              <td className="border border-primary px-4 py-3 bg-white text-gray-700">
+              <td className="border border-primary px-2 md:px-4 p-1 md:py-3 text-xs md:text-base bg-white text-gray-700">
                 {spec.value}
               </td>
             </tr>
           ))}
         </tbody>
-      </table>
+      </motion.table>
     </div>
                 </section>
                <section id="use-cases" className="flex-col flex items-center bg-white py-12">
-                       <div className="font-primary font-extrabold text-primary/[0.08] px-68 text-9xl relative top-30 ">
+                       <motion.div 
+                                           initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7}}
+                       className="font-primary font-extrabold text-primary/[0.08] px-68 text-9xl relative top-30 ">
                              USE CASES
-                           </div>
-                           <div className="font-primary text-blue-800 font-bold text-5xl px-68 text-white-800 ">
+                           </motion.div>
+                           <motion.div 
+                                               initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7}}
+                           className="font-primary text-blue-800 font-bold text-lg md:text-5xl md:px-68 text-white-800 ">
                               Ideal Use Cases
-                           </div>
+                           </motion.div>
                
-                           <div className="grid grid-cols-2 justify-between gap-x-20 gap-y-16 mt-20 px-72">
+                           <motion.div 
+                                               initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7, delay:0.2}}
+                           className="grid grid-cols-1 md:grid-cols-2 text-center md:text-left justify-between gap-x-20 gap-y-16 mt-20 px-4 md:px-72">
                
-                                <div className="flex flex-row gap-4">
+                                <div className="flex flex-col items-center md:flex-row gap-4">
                
-                               <div className="relative w-26 h-30">
-                                   <Image 
-                                   src="/Hotel.webp"
-                                   alt=""
-                                   fill
-                                   className="object-fill"
-                                   />
-                               </div>
-                               <div className="flex flex-col gap-5">
-                                   <div className="font-primary font-bold text-2xl text-primary">
-                                   High-Rise Buildings 
-                               </div>
-                               <div className="font-secondary font-light text-zinc-600 text-base">
-                                   Lightweight yet strong materials reduce structural load and speed up construction. 
-                               </div>
-                               </div>
-                               
-               
-                           </div>
-               
-                            <div className="flex flex-row gap-4">
-               
-                               <div className="relative w-40 h-30">
-                                   <Image 
-                                   src="/Group7.webp"
-                                   alt=""
-                                   fill
-                                   className="object-fill"
-                                   />
-                               </div>
-                               <div className="flex flex-col gap-5">
-                                   <div className="font-primary font-bold text-2xl text-primary">
-                                  Residential Projects 
-                               </div>
-                               <div className="font-secondary font-light text-zinc-600 text-base">
-                                  Perfect for building modern homes with better insulation, soundproofing, and reduced material wastage. 
-                               </div>
-                               </div>
-                               
-               
-                           </div>
-               
-                            <div className="flex flex-row gap-4">
-               
-                               <div className="relative w-30 h-30">
-                                   <Image 
-                                   src="/Layer_1.webp"
-                                   alt=""
-                                   fill
-                                   className="object-fill"
-                                   />
-                               </div>
-                               <div className="flex flex-col gap-5">
-                                   <div className="font-primary font-bold text-2xl text-primary">
-                                    Commercial Buildings 
-                               </div>
-                               <div className="font-secondary font-light text-zinc-600 text-base">
-                                   Supports large-scale developments with consistent quality and faster execution. 
-                               </div>
-                               </div>
-                               
-               
-                           </div>
-               
-                            <div className="flex flex-row gap-4">
-               
-                               <div className="relative w-40 h-30">
-                                   <Image 
-                                   src="/Group-1.webp"
-                                   alt=""
-                                   fill
-                                   className="object-fill"
-                                   />
-                               </div>
-                               <div className="flex flex-col gap-5">
-                                   <div className="font-primary font-bold text-2xl text-primary">
-                                   Government Buildings 
-                               </div>
-                               <div className="font-secondary font-light text-zinc-600 text-base">
-                                    Meets high standards of durability, cost-efficiency, and sustainability for public infrastructure. 
-                               </div>
-                               </div>
-                               
-               
-                           </div>       
-                         </div>
+                              <motion.div 
+                                               
+                                               className="flex flex-col items-center md:flex-row gap-4">
+                              
+                                              <div className="relative w-12 h-16 md:w-26 md:h-30">
+                                                  <Image 
+                                                  src="/Hotel.webp"
+                                                  alt=""
+                                                  fill
+                                                  className="object-fill"
+                                                  />
+                                              </div>
+                                              <div className="flex flex-col gap-5">
+                                                  <div className="font-primary font-bold text-lg md:text-2xl text-primary">
+                                                  High-Rise Buildings 
+                                              </div>
+                                              <div className="font-secondary font-light text-zinc-600 text-xs md:text-base">
+                                                  Lightweight yet strong materials reduce structural load and speed up construction. 
+                                              </div>
+                                              </div>
+                                              
+                              
+                                          </motion.div>
+                              
+                                           <div className="flex flex-col items-center md:flex-row gap-4">
+                              
+                                              <div className="relative w-16 h-16 md:w-40 md:h-30">
+                                                  <Image 
+                                                  src="/Group7.webp"
+                                                  alt=""
+                                                  fill
+                                                  className="object-fill"
+                                                  />
+                                              </div>
+                                              <div className="flex flex-col gap-5">
+                                                  <div className="font-primary font-bold text-lg md:text-2xl text-primary">
+                                                 Residential Projects 
+                                              </div>
+                                              <div className="font-secondary font-light text-zinc-600 text-xs md:text-base">
+                                                 Perfect for building modern homes with better insulation, soundproofing, and reduced material wastage. 
+                                              </div>
+                                              </div>
+                                              
+                              
+                                          </div>
+                              
+                                           <div className="flex flex-col items-center md:flex-row gap-4">
+                              
+                                              <div className="relative w-16 md:w-30 h-16 md:h-30">
+                                                  <Image 
+                                                  src="/Layer_1.webp"
+                                                  alt=""
+                                                  fill
+                                                  className="object-fill"
+                                                  />
+                                              </div>
+                                              <div className="flex flex-col gap-5">
+                                                  <div className="font-primary font-bold text-lg md:text-2xl text-primary">
+                                                   Commercial Buildings 
+                                              </div>
+                                              <div className="font-secondary font-light text-zinc-600 text-xs md:text-base">
+                                                  Supports large-scale developments with consistent quality and faster execution. 
+                                              </div>
+                                              </div>
+                                              
+                              
+                                          </div>
+                              
+                                           <div className="flex flex-col items-center md:flex-row gap-4">
+                              
+                                              <div className="relative w-20 h-20 md:w-40 md:h-30">
+                                                  <Image 
+                                                  src="/Group-1.webp"
+                                                  alt=""
+                                                  fill
+                                                  className="object-fill"
+                                                  />
+                                              </div>
+                                              <div className="flex flex-col gap-5">
+                                                  <div className="font-primary font-bold text-lg md:text-2xl text-primary">
+                                                  Government Buildings 
+                                              </div>
+                                              <div className="font-secondary font-light text-zinc-600 text-xs md:text-base">
+                                                   Meets high standards of durability, cost-efficiency, and sustainability for public infrastructure. 
+                                              </div>
+                                              </div>
+                                              
+                              
+                                          </div>
+                                          </div>
+                         </motion.div>
                           
                      </section>
                       <section id="faqs" className="flex-col gbg flex items-center bg-white py-12">
             <div className="font-primary font-extrabold text-white/[0.08] px-68 text-9xl relative top-30 ">
                FAQS
             </div>
-            <div className="font-primary text-white font-bold text-5xl px-68 text-white-800 ">
+            <div className="font-primary text-white font-bold text-xl md:text-5xl px-68 text-white-800 ">
                FAQs
             </div>
             <div>
             <Queries />
-            <div className="font-primary text-2xl hover:bg-black hover:text-white transition-all duration-200 group bg-white px-6 py-3 rounded-lg w-fit mx-auto font-medium">
+            <motion.div 
+                                initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
+            whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
+            transition = {{ duration:0.7}}
+            className="font-primary text-sm md:text-2xl hover:bg-black hover:text-white transition-all duration-200 group bg-white px-6 py-3 rounded-lg w-fit mx-auto font-medium">
                 Enquire Now <ArrowRight className="inline text-black group-hover:text-white"/>
-            </div>
+            </motion.div>
             </div>
       </section>
 
