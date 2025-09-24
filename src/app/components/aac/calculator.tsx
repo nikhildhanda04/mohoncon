@@ -70,7 +70,7 @@ export default function Calculator(){
      initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.7, delay:0.3}}
-     className="bg-blue-800 rounded-3xl p-8 md:w-md mt-20 text-white">
+     className="bg-primary rounded-3xl p-8 md:w-md mt-20 text-white">
       {/* Wall Area Input */}
       <div className="mb-6">
         <label className="block text-sm md:text-lg font-medium mb-3">
@@ -111,7 +111,7 @@ export default function Calculator(){
       {/* Calculate Button */}
       <button
         onClick={calculateBlocks}
-        className="w-full bg-lime-400 hover:bg-lime-500 text-blue-900 font-semibold text-xs md:text-base py-4 rounded-xl transition-colors duration-200 mb-6"
+        className="w-full bg-lime-400 hover:bg-lime-500 text-white  font-semibold text-xs md:text-base py-4 rounded-xl transition-colors duration-200 mb-6"
       >
         Calculate
       </button>

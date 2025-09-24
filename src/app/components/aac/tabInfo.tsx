@@ -232,7 +232,7 @@ export default function HomePage() {
   
   const tabs = [
     { id: "benefits", label: "BENEFITS" },
-    { id: "calculator", label: "AMOUNT CALCULATOR" },
+    { id: "calculator", label: "BLOCKS CALCULATOR" },
     { id: "technical", label: "TECHNICAL SPECIFICATIONS" },
     { id: "sizes", label: "SIZES OFFERED" },
     { id: "use-cases", label: "USE CASES" },
