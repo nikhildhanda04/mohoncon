@@ -9,9 +9,9 @@ export default function ContactForm(){
         initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.5,}}
-        className="flex flex-row mx-4 md:mx-84 mt-36 jusitfy-between rounded-xl bg-[#c1ccdb]">
+        className="flex flex-row mx-4 lg:mx-84 mt-36 jusitfy-between rounded-xl bg-[#c1ccdb]">
 
-                <div className="relative hidden md:block w-200 h-98">
+                <div className="relative hidden lg:block w-200 h-98">
                     <Image
                     src="/contactform.webp"
                     alt="fire"
