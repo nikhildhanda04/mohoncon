@@ -31,7 +31,16 @@ export default function Calculator() {
     { value: '600X200X225', label: '600X200X225', cbm: 0.027 },
     { value: '600X200X250', label: '600X200X250', cbm: 0.030 },
     { value: '600X200X275', label: '600X200X275', cbm: 0.033 },
-    { value: '600X200X300', label: '600X200X300', cbm: 0.036 }
+    { value: '600X200X300', label: '600X200X300', cbm: 0.036 },
+    // Additional block sizes
+    { value: '625X200X200', label: '625X200X200', cbm: 0.025 },
+    { value: '625X240X200', label: '625X240X200', cbm: 0.030 },
+    { value: '625X250X200', label: '625X250X200', cbm: 0.031 },
+    { value: '625X300X200', label: '625X300X200', cbm: 0.038 },
+    { value: '625X200X100', label: '625X200X100', cbm: 0.0125 },
+    { value: '625X240X100', label: '625X240X100', cbm: 0.015 },
+    { value: '625X250X100', label: '625X250X100', cbm: 0.0156 },
+    { value: '625X300X100', label: '625X300X100', cbm: 0.0188 }
   ];
 
   const calculateBlocks = () => {
