@@ -7,7 +7,7 @@ import  {motion}  from 'framer-motion'
 export default function Product(){
     return(
         <>
-        <div className="flex-col flex items-center bg-white py-12 px-4 md:px-68">
+        <div className="flex-col flex items-center bg-white py-12 px-4 sm:px-20 md:px-52 lg:px-68">
 
             <motion.div 
             initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
@@ -52,7 +52,7 @@ export default function Product(){
                     </Link>
                     
                 </div>
-                <div className="relative w-100 h-60 md:w-180 md:h-112">
+                <div className="relative w-full h-60 sm:h-76 md:w-180 md:h-112">
                     <Image 
                     src="/product1.webp"
                     alt=""
@@ -84,7 +84,7 @@ export default function Product(){
                     </Link>
                     
                 </div>
-                <div className="relative w-100 h-60 md:w-180 md:h-112">
+                <div className="relative w-full h-60 sm:h-76 md:w-180 md:h-112">
                     <Image 
                     src="/product2.webp"
                     alt=""

@@ -7,7 +7,7 @@ import Link from "next/link"
 export default function Products(){
     return(
         <>
-        <div className="flex flex-col items-center bg-white py-20 overflow-hidden px-4 md:px-68">
+        <div className="flex flex-col items-center max-w-[1920px] bg-white py-20 overflow-hidden px-4 sm:px-36 md:px-44 lg:px-68">
 
             <motion.div 
             initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
@@ -37,7 +37,7 @@ export default function Products(){
                 initial = {{ x:-50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ x:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.5}}
-                className="relative w-99 h-80 md:w-full md:h-full ">
+                className="relative w-full h-80 md:w-full md:h-full ">
                     <Image 
                     src="/prod1.webp"
                     alt="AAC BLOCKS"
@@ -49,7 +49,7 @@ export default function Products(){
                                 initial = {{ x:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ x:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.5}}
-                className="bg-primary gap-6 md:gap-12 px-4 md:px-28 py-6 md:py-42 font-primary items-center flex flex-col justify-center">
+                className="bg-primary gap-6 md:gap-12 px-4 md:px-28 py-6 md:py-42 font-primary items-center flex flex-col justify-center w-full">
 
                     <div className="font-primary text-xl md:text-5xl font-semibold underline underline-offset-8 text-white ">
                         AAC BLOCKS
@@ -70,7 +70,7 @@ export default function Products(){
                 initial = {{ x:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ x:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.5,}}
-                className="relative  md:hidden block w-99 h-80 mt-6 md:mt-0">
+                className="relative w-full md:hidden block h-80 mt-6 md:mt-0">
                     <Image 
                     src="/prod2.webp"
                     alt="AAC BLOCKS"
@@ -83,7 +83,7 @@ export default function Products(){
                 initial = {{ x:-50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ x:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.5,}}
-                className="bg-[#a6ce38] text-center gap-6 md:gap-12 px-4 md:px-28 py-6 md:py-42 font-primary items-center flex flex-col justify-center">
+                className="bg-[#a6ce38] text-center gap-6 md:gap-12 px-4 md:px-28 py-6 md:py-42 font-primary items-center flex flex-col justify-center w-full">
 
                     <div className="font-primary text-xl md:text-5xl font-semibold underline underline-offset-8 text-black ">
                          Block Joining Mortar
@@ -103,7 +103,7 @@ export default function Products(){
                 initial = {{ x:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ x:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.5,}}
-                className="relative  hidden md:block w-full">
+                className="relative hidden md:block w-full">
                     <Image 
                     src="/prod2.webp"
                     alt="AAC BLOCKS"

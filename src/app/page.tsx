@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
       <>
-      <div className="flex flex-col bg-white overflow-clip">
+      <div className="flex flex-col max-w-[1920px] bg-white overflow-clip">
 
         <div className="z-99">
           <Navbar />

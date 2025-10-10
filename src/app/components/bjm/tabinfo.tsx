@@ -213,7 +213,7 @@ export default function TabInfo(){
                                            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.7}}
-                       className="font-primary font-extrabold text-primary/[0.08] px-68 text-9xl relative top-30 ">
+                       className="font-primary font-extrabold text-primary/[0.08] px-68 text-6xl md:text-7xl lg:text-9xl relative top-20 lg:top-30 ">
                              USE CASES
                            </motion.div>
                            <motion.div 
@@ -228,9 +228,9 @@ export default function TabInfo(){
                                                initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.7, delay:0.2}}
-                           className="grid grid-cols-1 md:grid-cols-2 text-center md:text-left justify-between gap-x-20 gap-y-16 mt-20 px-4 md:px-72">
+                           className="text-center md:text-left justify-between gap-x-20 gap-y-16 mt-20 px-4 sm:px-12 md:px-36 lg:px-72">
                
-                                <div className="flex flex-col items-center md:flex-row gap-4">
+                                <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
                
                               <motion.div 
                                                

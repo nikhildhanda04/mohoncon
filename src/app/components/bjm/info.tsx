@@ -12,14 +12,14 @@ export default function Info(){
                     initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.7,}}
-                    className="font-primary font-extrabold text-primary/[0.08] text-9xl relative top-30 ">
+                    className="font-primary text-center font-extrabold text-primary/[0.08] text-7xl md:text-6xl lg:text-9xl relative top-20 lg:top-30 ">
                        BLOCK JOINING MORTAR
                     </motion.div>
                     <motion.div 
                     initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.7,}}
-                    className="font-primary font-bold text-lg md:text-5xl md:px-68 text-blue-800 ">
+                    className="font-primary  font-bold text-lg md:text-5xl md:px-68 text-blue-800 ">
                         Block Joining Mortar
                     </motion.div>
                     

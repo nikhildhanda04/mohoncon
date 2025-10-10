@@ -7,7 +7,7 @@ import {motion} from 'framer-motion'
 export default function Promise(){
     return(
         <>
-        <div className="flex-col flex items-center bg-white py-12 px-4 md:px-68">
+        <div className="flex-col flex items-center bg-white py-12 px-12 sm:px-28 md:px-44 lg:px-68">
 
             <motion.div 
             initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
@@ -40,16 +40,16 @@ export default function Promise(){
             transition = {{ duration:0.5, delay:0.2}}
                 className="flex flex-col w-full">
 
-                    <div className="max-w-md w-full">
+                    <div className=" w-full">
                     <Image
                         src="/promise1.webp"
                         alt=""
                         width={800}
                         height={600}
-                        className="w-full h-auto rounded-t-lg"
+                        className="w-full h-40 md:h-56 lg:h-64 xl:h-80 rounded-t-lg"
                     />
                     </div>
-                    <div className="bg-[#a6ce38] rounded-b-lg flex flex-col">
+                    <div className="bg-[#a6ce38] w-full rounded-b-lg flex flex-col">
                     <div className="font-secondary font-bold px-4 pt-8 text-2xl tracking-wide">
                         Quality <br /> Assurance
                     </div> 
@@ -69,13 +69,13 @@ export default function Promise(){
             transition = {{ duration:0.5, delay:0.3}}
                 className="flex flex-col w-full">
 
-                    <div className="max-w-md w-full">
+                    <div className=" w-full">
                     <Image
                         src="/promise2.webp"
                         alt=""
                         width={800}
                         height={600}
-                        className="w-full h-auto rounded-t-lg"
+                        className="w-full h-40 md:h-56 lg:h-64 xl:h-80 rounded-t-lg"
                     />
                     </div>
                     <div className="bg-[#a6ce38] rounded-b-lg flex flex-col">
@@ -99,13 +99,13 @@ export default function Promise(){
             transition = {{ duration:0.5, delay:0.4}}
                 className="flex flex-col w-full">
 
-                    <div className="max-w-md w-full">
+                    <div className="w-full">
                     <Image
                         src="/promise3.webp"
                         alt=""
                         width={800}
                         height={600}
-                        className="w-full h-auto rounded-t-lg"
+                        className="w-full h-40 md:h-56 lg:h-64 xl:h-80 rounded-t-lg"
                     />
                     </div>
                     <div className="bg-[#a6ce38] rounded-b-lg flex flex-col">

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 export default function Hero() {
     return(
         <>
-        <div className="flex flex-col px-4 md:px-68 justify-center h-[90vh] py-28">
+        <div className="flex max-w-[1920px] flex-col px-4 sm:px-20 md:px-44 lg:px-68 justify-center h-[90vh] py-28">
 
             <div className="absolute top-0 left-0 z-1 w-full h-[90vh]">
                 <Image

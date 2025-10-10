@@ -7,7 +7,7 @@ import Link from "next/link"
 export default function About(){
     return(
         <>
-        <div className="flex-col flex items-center py-12 bg-white px-4 md:px-68">
+        <div className="flex-col flex items-center py-12 bg-white px-4 md:px-36 lg:px-68">
 
             <motion.div 
             initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
@@ -31,13 +31,13 @@ export default function About(){
                 Smart material that builds better, faster, greener.
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 text-center gap-2 md:px-32 mt-24">
+            <div className="grid grid-cols-1 md:grid-cols-2 text-center items-center justify-center gap-2 px-4 sm:px-12 md:px-20 lg:px-32 mt-24">
 
                 <motion.div 
                 initial = {{ x:-50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ x:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.5,}}
-                className="relative w-99 h-108 md:w-full">
+                className="relative w-99 h-108 mx-auto md:max-w-120">
                     <Image 
                     src="/about.webp"
                     alt="About Us"

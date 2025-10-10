@@ -105,7 +105,7 @@ export default function Info() {
         initial = {{ x:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ x:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.5,}}
-        className="relative w-90  h-80 md:w-166 md:h-114">
+        className="relative w-90 mx-auto h-80 md:w-166 md:h-114">
             <Image 
             src="/about.webp"
             alt=""

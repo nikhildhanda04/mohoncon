@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 export default function Whyus(){
     return(
         <>
-        <div className="flex-col flex items-center bg-white pt-12 px-4 md:px-68">
+        <div className="flex-col flex items-center bg-white pt-12 px-4 sm:px-12 md:px-44 lg:px-68">
 
             <motion.div 
             initial = {{ y:20, opacity:0, filter:'blur(10px)'}}

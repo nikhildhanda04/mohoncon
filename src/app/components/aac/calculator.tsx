@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 type BlockSize = {
   value: string;
   label: string;
-  cbm: number; // volume of one block in m³
+  cbm: number; 
 };
 
 type Result = {
@@ -32,7 +32,6 @@ export default function Calculator() {
     { value: '600X200X250', label: '600X200X250', cbm: 0.030 },
     { value: '600X200X275', label: '600X200X275', cbm: 0.033 },
     { value: '600X200X300', label: '600X200X300', cbm: 0.036 },
-    // Additional block sizes
     { value: '625X200X200', label: '625X200X200', cbm: 0.025 },
     { value: '625X240X200', label: '625X240X200', cbm: 0.030 },
     { value: '625X250X200', label: '625X250X200', cbm: 0.031 },
@@ -54,19 +53,14 @@ export default function Calculator() {
     const selectedBlock = blockSizes.find(block => block.value === selectedSize);
     if (!selectedBlock) return;
 
-    // Convert wall area from sq.ft to sq.m (1 sq.ft = 0.092903 sq.m)
     const wallAreaM2 = wallAreaValue * 0.092903;
 
-    // Calculate wall thickness in meters from block size (third part, in mm)
-    const thickness = parseInt(selectedSize.split('X')[2]) / 1000; // mm to m
+    const thickness = parseInt(selectedSize.split('X')[2]) / 1000; 
 
-    // Calculate wall volume in m³
     const wallVolume = wallAreaM2 * thickness;
 
-    // Calculate number of blocks required (wall volume / block volume)
     const blocksRequired = Math.ceil(wallVolume / selectedBlock.cbm);
 
-    // Calculate required block volume in cbm
     const requiredBlockCBM = (blocksRequired * selectedBlock.cbm).toFixed(3);
 
     setResult({
@@ -84,7 +78,6 @@ export default function Calculator() {
       transition={{ duration: 0.7, delay: 0.3 }}
       className="bg-primary rounded-3xl p-8 md:w-md mt-20 text-white"
     >
-      {/* Wall Area Input */}
       <div className="mb-6">
         <label className="block text-sm md:text-lg font-medium mb-3">
           Wall Area
@@ -103,7 +96,6 @@ export default function Calculator() {
         </div>
       </div>
 
-      {/* Block Size Dropdown */}
       <div className="mb-6">
         <label className="block text-sm md:text-lg font-medium mb-3">
           Size of Block
@@ -121,7 +113,6 @@ export default function Calculator() {
         </select>
       </div>
 
-      {/* Calculate Button */}
       <button
         onClick={calculateBlocks}
         className="w-full bg-lime-400 hover:bg-lime-500 text-white font-semibold text-xs md:text-base py-4 rounded-xl transition-colors duration-200 mb-6"
@@ -129,7 +120,6 @@ export default function Calculator() {
         Calculate
       </button>
 
-      {/* Result */}
       <div className="mb-4">
         <h3 className="md:text-lg text-xs font-medium mb-2">
           Total Product Required

@@ -6,10 +6,9 @@
   --font-inter: "Inter", sans-serif;
   --color-primary: #299191;
   
-  /* Custom breakpoints for 15-inch laptops and larger */
   --breakpoint-sm: 640px;
-  --breakpoint-md: 1366px;  /* 15-inch laptops and above */
-  --breakpoint-lg: 1640px;  /* Larger 15-inch and 16-inch+ laptops */
-  --breakpoint-xl: 1920px;  /* Full HD and larger screens */
-  --breakpoint-2xl: 2560px; /* 4K and high-res displays */
+  --breakpoint-md: 1366px; 
+  --breakpoint-lg: 1640px;
+  --breakpoint-xl: 1920px;  
+  --breakpoint-2xl: 2560px; 
 }
