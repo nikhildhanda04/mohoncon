@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 import localFont from 'next/font/local'
 import "./globals.css";
+import SmoothScrolling from "./components/SmoothScrolling";
+import { Analytics } from "@vercel/analytics/react"
 
 const trap = localFont({
   src: [
@@ -74,7 +76,8 @@ export default function RootLayout({
       <body
         className={`${trap.variable} ${poppins.variable} ${inter.variable} antialiased bg-stone-200 `}
       >
-        {children}
+        <SmoothScrolling>{children}</SmoothScrolling>
+        <Analytics />
       </body>
     </html>
   );

@@ -11,7 +11,7 @@ export default function Stats(){
 
             <div className="font-primary text-primary text-center border-r border-zinc-800 leading-8  font-bold text-3xl md:text-6xl px-2 md:px-6">
 
-                10+ <br/> <span className="text-zinc-700 font-normal leading-4  text-base md:text-2xl text-center">Years of Expertise</span>
+                2+ <br/> <span className="text-zinc-700 font-normal leading-4  text-base md:text-2xl text-center">Years of Expertise</span>
 
             </div>
 
@@ -23,7 +23,7 @@ export default function Stats(){
 
                         <div className="font-primary text-primary leading-8  text-center font-bold text-3xl md:text-6xl px-2 md:px-6">
 
-                10+ <br/> <span className="text-zinc-700 font-normal leading-4  text-base md:text-2xl text-center">Residential Projects</span>
+                50+ <br/> <span className="text-zinc-700 font-normal leading-4  text-base md:text-2xl text-center">Projects</span>
 
             </div>
 

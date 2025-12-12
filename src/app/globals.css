@@ -5,10 +5,31 @@
   --font-secondary: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
   --color-primary: #299191;
-  
+
   --breakpoint-sm: 640px;
-  --breakpoint-md: 1366px; 
+  --breakpoint-md: 1366px;
   --breakpoint-lg: 1640px;
-  --breakpoint-xl: 1920px;  
-  --breakpoint-2xl: 2560px; 
+  --breakpoint-xl: 1920px;
+  --breakpoint-2xl: 2560px;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
