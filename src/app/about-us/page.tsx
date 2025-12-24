@@ -10,8 +10,9 @@ import Product from "../components/about/product";
 import Footer from "../components/common/footer";
 
 export const metadata: Metadata = {
-    title: "About Us | Mohoncon Builds",
-    description: "Learn about Mohoncon Builds, a leading provider of AAC blocks and construction solutions. Discover our mission, values, and commitment to quality and sustainability in building materials.",
+    title: "About US | Mohoncon Builds | Leading AAC Block Manufacturer Bhopal",
+    description: "Learn about Mohoncon Builds, Bhopal's leading provider of AAC blocks and construction solutions. Discover our mission to provide sustainable and high-quality building materials across MP.",
+    keywords: ["Mohoncon Builds", "About Mohoncon", "AAC block manufacturer MP", "Sustainable construction Bhopal", "Building materials supplier Bhopal"],
 }
 
 export default function About(){

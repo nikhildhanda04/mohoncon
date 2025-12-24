@@ -4,6 +4,7 @@ import localFont from 'next/font/local'
 import "./globals.css";
 import SmoothScrolling from "./components/SmoothScrolling";
 import { Analytics } from "@vercel/analytics/react"
+import JsonLd from "./components/common/JsonLd";
 
 const trap = localFont({
   src: [
@@ -58,12 +59,32 @@ const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"]
 });
 
+const metadataBase = new URL("https://mohanconbuilds.co.in");
+
 export const metadata: Metadata = {
+  metadataBase,
   title: {
-    default: "Mohoncon Builds",
+    default: "Mohoncon Builds | AAC Blocks in Bhopal, Madhya Pradesh",
     template: "%s | Mohoncon Builds",
   },
-  description: "This is the website of mohoncon builds. We build mannufacture AAC blocks, and block joining mortar in madhya paradesh, India.",
+  description: "Mohoncon Builds is a premier manufacturer of high-quality AAC blocks and block joining mortar in Bhopal, MP. We provide sustainable, lightweight, and durable construction solutions across Madhya Pradesh.",
+  keywords: ["AAC Blocks Bhopal", "AAC Blocks Madhya Pradesh", "Mohoncon Builds", "Block Joining Mortar Bhopal", "Lightweight Concrete Blocks MP", "Construction Materials Bhopal"],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Mohoncon Builds | Leading AAC blocks Manufacturer in Bhopal",
+    description: "Manufacture of high-quality AAC blocks and block joining mortar in Bhopal, Madhya Pradesh. Innovative, sustainable, and eco-friendly construction solutions.",
+    url: "https://mohanconbuilds.co.in",
+    siteName: "Mohoncon Builds",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mohoncon Builds | AAC Blocks in Bhopal",
+    description: "High-quality AAC blocks and mortar in Bhopal, MP.",
+  },
 };
 
 export default function RootLayout({
@@ -71,8 +92,52 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Mohoncon Builds",
+    "image": "https://mohanconbuilds.co.in/logo.png",
+    "@id": "https://mohanconbuilds.co.in",
+    "url": "https://mohanconbuilds.co.in",
+    "telephone": "+91-XXXXXXXXXX", // Placeholder, check contact page if available
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bhopal Bypass Road", // Update with exact address if known
+      "addressLocality": "Bhopal",
+      "addressRegion": "MP",
+      "postalCode": "462001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 23.2599,
+      "longitude": 77.4126
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "sameAs": [
+      "https://www.facebook.com/mohonconbuilds",
+      "https://www.instagram.com/mohonconbuilds"
+    ]
+  };
+
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="SUAhk2CjyV0J8xjrhkhEbKFAql88EWs895jvrZMCSDU" />
+        <JsonLd data={localBusinessSchema} />
+      </head>
       <body
         className={`${trap.variable} ${poppins.variable} ${inter.variable} antialiased bg-stone-200 `}
       >
