@@ -59,7 +59,7 @@ const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"]
 });
 
-const metadataBase = new URL("https://mohanconbuilds.co.in");
+const metadataBase = new URL("https://www.mohanconbuilds.co.in");
 
 export const metadata: Metadata = {
   metadataBase,
@@ -99,13 +99,13 @@ export default function RootLayout({
     "image": "https://mohanconbuilds.co.in/logo.png",
     "@id": "https://mohanconbuilds.co.in",
     "url": "https://mohanconbuilds.co.in",
-    "telephone": "+91-XXXXXXXXXX", // Placeholder, check contact page if available
+    "telephone": "+91-7089524169", 
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Bhopal Bypass Road", // Update with exact address if known
+      "streetAddress": "Sehore Bhopal", 
       "addressLocality": "Bhopal",
       "addressRegion": "MP",
-      "postalCode": "462001",
+      "postalCode": "466001",
       "addressCountry": "IN"
     },
     "geo": {
