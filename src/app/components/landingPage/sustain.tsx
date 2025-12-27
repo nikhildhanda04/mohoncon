@@ -16,13 +16,13 @@ export default function Sustain(){
             className="font-primary font-extrabold text-primary/[0.08] text-9xl relative top-30 ">
                 SUSTAINABILITY
             </motion.div>
-            <motion.div
+            <motion.h2
             initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.5,}}
             className="font-primary font-bold text-2xl md:text-5xl text-blue-800 ">
                 Green & Sustainability 
-            </motion.div>
+            </motion.h2>
             <motion.div 
             initial = {{ y:20, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}

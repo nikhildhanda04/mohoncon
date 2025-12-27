@@ -46,13 +46,13 @@ export default function TabInfo(){
                 <Tabs tabs={tabs} />
 
                 <section id="benefits" className="flex-col gbg flex items-center bg-white py-12 px-4 md:px-72">
-                  <motion.div 
+                  <motion.h2 
                   initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.7, delay:0.1}}
                   className="font-primary text-white font-medium text-lg md:text-5xl uppercase text-white-800 ">
                    Key benefits block joining mortar 
-                  </motion.div>
+                  </motion.h2>
 
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-20 mt-20">
 
@@ -180,13 +180,13 @@ export default function TabInfo(){
                   className="font-primary font-extrabold text-primary/[0.08] px-68 text-9xl relative top-30 ">
                SPECIFICATIONS
             </motion.div>
-            <motion.div 
+            <motion.h2 
                                 initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.7}}
             className="font-primary text-blue-800 font-bold text-lg md:text-5xl md:px-68 text-white-800 ">
                Technical Specifications
-            </motion.div>\
+            </motion.h2>\
                <div className="w-full max-w-2xl mt-20">
       <motion.table 
                           initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
@@ -330,7 +330,7 @@ export default function TabInfo(){
                FAQS
             </div>
             <div className="font-primary text-white font-bold text-xl md:text-5xl px-68 text-white-800 ">
-               FAQs
+               <h2 className="inline">FAQs</h2>
             </div>
             <div>
             <Queries />

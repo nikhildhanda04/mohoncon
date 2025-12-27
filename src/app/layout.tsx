@@ -68,14 +68,14 @@ export const metadata: Metadata = {
     template: "%s | Mohoncon Builds",
   },
   description: "Mohoncon Builds is a premier manufacturer of high-quality AAC blocks and block joining mortar in Bhopal, MP. We provide sustainable, lightweight, and durable construction solutions across Madhya Pradesh.",
-  keywords: ["AAC Blocks Bhopal", "AAC Blocks Madhya Pradesh", "Mohoncon Builds", "Block Joining Mortar Bhopal", "Lightweight Concrete Blocks MP", "Construction Materials Bhopal"],
+  keywords: ["AAC Blocks Bhopal", "AAC Blocks Madhya Pradesh", "Mohoncon Builds Bhopal", "Block Joining Mortar Bhopal", "Bhopal AAC Bricks", "Construction Materials Bhopal", "Best AAC Blocks Bhopal"],
   alternates: {
-    canonical: "/",
+    canonical: "https://www.mohanconbuilds.co.in",
   },
   openGraph: {
     title: "Mohoncon Builds | Leading AAC blocks Manufacturer in Bhopal",
     description: "Manufacture of high-quality AAC blocks and block joining mortar in Bhopal, Madhya Pradesh. Innovative, sustainable, and eco-friendly construction solutions.",
-    url: "https://mohanconbuilds.co.in",
+    url: "https://www.mohanconbuilds.co.in",
     siteName: "Mohoncon Builds",
     locale: "en_IN",
     type: "website",
@@ -84,6 +84,17 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mohoncon Builds | AAC Blocks in Bhopal",
     description: "High-quality AAC blocks and mortar in Bhopal, MP.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -96,9 +107,9 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Mohoncon Builds",
-    "image": "https://mohanconbuilds.co.in/logo.png",
-    "@id": "https://mohanconbuilds.co.in",
-    "url": "https://mohanconbuilds.co.in",
+    "image": "https://www.mohanconbuilds.co.in/logo.png",
+    "@id": "https://www.mohanconbuilds.co.in",
+    "url": "https://www.mohanconbuilds.co.in",
     "telephone": "+91-7089524169", 
     "address": {
       "@type": "PostalAddress",

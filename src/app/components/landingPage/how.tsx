@@ -29,9 +29,9 @@ export default function How(){
             transition = {{ duration:0.5,}}
         className="flex flex-col items-center gap-12">
 
-            <div className="font-primary text-white font-bold text-2xl md:text-5xl text-center">
+            <h2 className="font-primary text-white font-bold text-2xl md:text-5xl text-center">
                 How Blocks Are Made?
-            </div>
+            </h2>
             <div className="font-primary text-white text-base md:text-xl text-center">
                  AAC blocks are a smart, eco-friendly choice for building. <br />
                 <br />

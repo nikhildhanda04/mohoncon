@@ -252,13 +252,13 @@ export default function HomePage() {
             className="font-primary font-extrabold text-white/[0.08] md:px-68 text-9xl relative top-30 ">
                BENEFITS
             </motion.div>
-            <motion.div
+            <motion.h2
             initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.7,}}
             className="font-primary text-white font-bold text-2xl md:text-5xl md:px-68 text-white-800 ">
                Benefits
-            </motion.div>
+            </motion.h2>
                 <motion.div 
                 initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
@@ -298,13 +298,13 @@ export default function HomePage() {
             className="font-primary font-extrabold text-primary/[0.08] md:px-68 text-9xl relative top-30 ">
                CALCULATOR
             </motion.div>
-            <motion.div
+            <motion.h2
             initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.7,}}
             className="font-primary text-blue-800 font-bold text-2xl md:text-5xl md:px-68 text-white-800 ">
               AAC Blocks Calculator
-            </motion.div>
+            </motion.h2>
 
         <div className="">
   <Calculator />
@@ -320,13 +320,13 @@ export default function HomePage() {
                 className="font-primary font-extrabold text-primary/[0.08] md:px-68 text-9xl relative top-30 ">
                SPECIFICATIONS
             </motion.div>
-            <motion.div 
+            <motion.h2 
             initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.7, delay:0.2}}
             className="font-primary text-blue-800 font-bold text-2xl md:text-5xl md:px-68 text-white-800 ">
                Technical Specifications
-            </motion.div>
+            </motion.h2>
             <div className="w-full overflow-x-auto">
       <motion.table 
       initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
@@ -381,13 +381,13 @@ export default function HomePage() {
             className="font-primary font-extrabold text-primary/[0.08] px-4 md:px-68 text-9xl relative top-30 ">
                SIZES OFFERED
             </motion.div>
-            <motion.div 
+            <motion.h2 
             initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.7,}}
             className="font-primary text-blue-800 font-bold text-2xl md:text-5xl px-4 md:px-68 text-white-800 ">
                Size Offered
-            </motion.div>
+            </motion.h2>
              <motion.div 
              initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
@@ -442,13 +442,13 @@ export default function HomePage() {
         className="font-primary font-extrabold text-primary/[0.08] md:px-68 text-9xl relative top-30 ">
               USE CASES
             </motion.div>
-            <motion.div 
+            <motion.h2 
             initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.7,}}
             className="font-primary text-blue-800 font-bold text-2xl md:text-5xl  md:px-68 text-white-800 ">
                Ideal Use Cases
-            </motion.div>
+            </motion.h2>
 
             <motion.div 
             initial = {{ y:50, opacity:0, filter:'blur(10px)'}}

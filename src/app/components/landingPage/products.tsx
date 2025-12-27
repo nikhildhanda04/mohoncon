@@ -16,13 +16,13 @@ export default function Products(){
             className="font-primary font-extrabold text-primary/[0.08] text-9xl relative top-30 ">
                 PRODUCTS
             </motion.div>
-            <motion.div 
+            <motion.h2 
             initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.5}}
             className="font-primary font-bold text-2xl md:text-5xl text-blue-800 ">
                 Our Products
-            </motion.div>
+            </motion.h2>
             <motion.div 
            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
@@ -51,9 +51,9 @@ export default function Products(){
             transition = {{ duration:0.5}}
                 className="bg-primary gap-6 md:gap-12 px-4 md:px-28 py-6 md:py-42 font-primary items-center flex flex-col justify-center w-full">
 
-                    <div className="font-primary text-xl md:text-5xl font-semibold underline underline-offset-8 text-white ">
+                    <h3 className="font-primary text-xl md:text-5xl font-semibold underline underline-offset-8 text-white ">
                         AAC BLOCKS
-                    </div>
+                    </h3>
                     <div className="text-center font-primary font-light text-white text-sm md:text-2xl">
                         We manufacture strong, lightweight AAC blocks that are easy to use and better for the environment. They help build faster, reduce weight, and keep spaces cooler. 
                     </div>
@@ -85,9 +85,9 @@ export default function Products(){
             transition = {{ duration:0.5,}}
                 className="bg-[#a6ce38] text-center gap-6 md:gap-12 px-4 md:px-28 py-6 md:py-42 font-primary items-center flex flex-col justify-center w-full">
 
-                    <div className="font-primary text-xl md:text-5xl font-semibold underline underline-offset-8 text-black ">
+                    <h3 className="font-primary text-xl md:text-5xl font-semibold underline underline-offset-8 text-black ">
                          Block Joining Mortar
-                    </div>
+                    </h3>
                     <div className="text-center font-primary font-light text-black text-sm md:text-2xl">
                        We make ready-to-use block joining mortar for faster and stronger construction. It gives a firm grip, reduces waste, and saves time. 
                     </div>

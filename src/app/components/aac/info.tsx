@@ -15,13 +15,13 @@ export default function Info(){
             className="font-primary font-extrabold text-primary/[0.08] px-68 text-9xl relative top-30 ">
                AAC BLOCKS
             </motion.div>
-            <motion.div 
+            <motion.h1 
             initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.7,}}
             className="font-primary font-bold text-2xl text-center md:text-5xl px-4 md:px-68 text-blue-800 ">
                 Autoclaved Aerated Concrete Blocks-(AAC)
-            </motion.div>
+            </motion.h1>
             <motion.div 
             initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}

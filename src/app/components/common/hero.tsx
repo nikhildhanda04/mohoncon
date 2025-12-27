@@ -18,13 +18,13 @@ export default function Hero() {
                 />
             </div>
 
-            <motion.div 
+            <motion.h1 
             initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.5,}}
             className="font-primary font-bold z-89 text-5xl md:text-7xl text-left">
                  We Prepare <br/> For The Future 
-            </motion.div>
+            </motion.h1>
             <motion.div 
             initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
