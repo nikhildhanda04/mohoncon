@@ -113,7 +113,7 @@ export default function Navbar() {
           </div>
           
           <Link
-            href="/sustanability"
+            href="/sustainability"
             className="font-primary text-lg lg:text-xl hover:text-primary hover:underline transition-all duration-200">
             Sustainability
           </Link>
@@ -190,7 +190,7 @@ export default function Navbar() {
 </div>
             
             <Link
-              href="/sustanability"
+              href="/sustainability"
               onClick={closeMobileMenu}
               className="font-primary text-lg px-6 py-3 hover:bg-gray-50 hover:text-primary transition-all duration-200">
               Sustainability

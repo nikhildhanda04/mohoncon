@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://mohanconbuilds.co.in/sitemap.xml",
+    sitemap: "https://www.mohanconbuilds.co.in/sitemap.xml",
   };
 }
