@@ -21,7 +21,7 @@ export default function About(){
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.5,}}
             className="font-primary font-bold text-2xl md:text-5xl text-blue-800 ">
-                About Us
+                About Mohoncon Builds - Bhopal&apos;s Premier AAC Manufacturer
             </motion.h2>
             <motion.div 
            initial = {{ y:20, opacity:0, filter:'blur(10px)'}}

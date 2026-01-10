@@ -20,8 +20,8 @@ export default function Products(){
             initial = {{ y:50, opacity:0, filter:'blur(10px)'}}
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.5}}
-            className="font-primary font-bold text-2xl md:text-5xl text-blue-800 ">
-                Our Products
+            className="font-primary font-bold text-2xl md:text-4xl text-blue-800 ">
+                Our Products available across Madhya Pradesh
             </motion.h2>
             <motion.div 
            initial = {{ y:50, opacity:0, filter:'blur(10px)'}}

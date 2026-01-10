@@ -30,7 +30,7 @@ export default function Hero() {
             whileInView = {{ y:0, opacity:1, filter:'blur(0px)'}}
             transition = {{ duration:0.6,}}
             className="font-secondary font-lg z-89 font-normal md:mt-0 mt-2 md:font-medium text-zinc-700">
-                With lasting materials and sustainable solutions, <br /> we shape a better India. 
+                Leading AAC Block Manufacturer in Bhopal & MP. <br /> With lasting materials and sustainable solutions, we shape a better India. 
             </motion.div>
 
         </div>

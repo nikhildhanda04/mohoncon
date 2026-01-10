@@ -140,6 +140,17 @@ export default function RootLayout({
     "sameAs": [
       "https://www.facebook.com/mohonconbuilds",
       "https://www.instagram.com/mohonconbuilds"
+    ],
+    "priceRange": "$$",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Bhopal"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Madhya Pradesh"
+      }
     ]
   };
 
