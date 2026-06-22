@@ -1,6 +1,61 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+function maskEmail(email: string): string {
+  const [name, domain] = email.split("@");
+  if (!domain) return "***";
+  const [domainName, ...tldParts] = domain.split(".");
+  const tld = tldParts.join(".");
+  const maskedName = name.length > 2
+    ? name.slice(0, 2) + "***" + name.slice(-1)
+    : name[0] + "***";
+  const maskedDomain = domainName.length > 2
+    ? domainName.slice(0, 2) + "***" + domainName.slice(-1)
+    : domainName + "***";
+  return `${maskedName}@${maskedDomain}.${tld}`;
+}
+
+function classifySMTPError(error: unknown): { type: string; message: string } {
+  if (!(error instanceof Error)) {
+    return { type: "unknown", message: "Unknown error occurred" };
+  }
+  const msg = error.message || "";
+
+  const code = (error as unknown as Record<string, string>).code;
+
+  if (code === "EAUTH") {
+    if (msg.includes("535")) {
+      return {
+        type: "bad_credentials",
+        message: "Gmail rejected credentials. Check SMTP_USER and SMTP_PASS are correct. Also check the Gmail inbox for a 'Sign-in attempt blocked' email and approve it.",
+      };
+    }
+    if (msg.includes("534")) {
+      return {
+        type: "less_secure_blocked",
+        message: "Gmail blocked login. The account owner must enable 'App Passwords' at myaccount.google.com/apppasswords (requires 2FA enabled).",
+      };
+    }
+    return { type: "auth_failed", message: msg };
+  }
+
+  if (code === "ESOCKET" || code === "ECONNECTION") {
+    return {
+      type: "connection_failed",
+      message: "Cannot reach Gmail SMTP. Gmail may be blocking Vercel's server IP. Try approving the sign-in from the Gmail inbox, or use a different email provider.",
+    };
+  }
+
+  if (code === "EENVELOPE") {
+    return {
+      type: "invalid_address",
+      message: "Invalid sender or recipient email address. Check SMTP_USER and CONTACT_EMAIL_TO.",
+    };
+  }
+
+  return { type: "unknown", message: msg };
+}
+
 export async function POST(request: Request) {
   const body = await request.json();
   const { formType, ...fields } = body;
@@ -12,8 +67,14 @@ export async function POST(request: Request) {
   const smtpUser = process.env.SMTP_USER;
   const smtpPass = process.env.SMTP_PASS;
 
+  console.log("[SMTP Config] Host:", process.env.SMTP_HOST || "smtp.gmail.com");
+  console.log("[SMTP Config] Port:", process.env.SMTP_PORT || "587");
+  console.log("[SMTP Config] User (masked):", smtpUser ? maskEmail(smtpUser) : "NOT SET");
+  console.log("[SMTP Config] Pass:", smtpPass ? "SET (length " + smtpPass.length + ")" : "NOT SET");
+  console.log("[SMTP Config] Contact To:", process.env.CONTACT_EMAIL_TO || "pranjal@mohanconbuilds.co.in");
+
   if (!smtpUser || smtpUser === "your-email@gmail.com" || !smtpPass) {
-    console.error("SMTP env vars missing or still set to placeholder");
+    console.error("[SMTP] Env vars missing or still set to placeholder");
     return NextResponse.json({
       success: false,
       message: "Form not configured. Please set SMTP_USER and SMTP_PASS in environment variables.",
@@ -56,13 +117,16 @@ export async function POST(request: Request) {
       `,
     });
 
+    console.log("[SMTP] Email sent successfully");
     return NextResponse.json({ success: true, message: "Thank you! We will get back to you soon." });
   } catch (error) {
-    console.error("Email send failed:", error instanceof Error ? error.message : error);
+    const classification = classifySMTPError(error);
+    console.error(`[SMTP] Send failed [${classification.type}]:`, classification.message);
 
     return NextResponse.json({
       success: false,
       message: "Failed to send message. Please try again later.",
+      errorType: classification.type,
     }, { status: 500 });
   }
 }
