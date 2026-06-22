@@ -1,21 +1,32 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || "smtp.gmail.com",
-  port: Number(process.env.SMTP_PORT) || 587,
-  secure: false,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
-
 export async function POST(request: Request) {
-  try {
-    const body = await request.json();
+  const body = await request.json();
+  const { formType, ...fields } = body;
 
-    const { formType, ...fields } = body;
+  console.log("--- New Contact Form Submission ---");
+  console.log("Form type:", formType);
+  console.log("Fields:", JSON.stringify(fields, null, 2));
+
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPass = process.env.SMTP_PASS;
+
+  if (!smtpUser || smtpUser === "your-email@gmail.com" || !smtpPass) {
+    console.error("SMTP env vars missing or still set to placeholder");
+    return NextResponse.json({
+      success: false,
+      message: "Form not configured. Please set SMTP_USER and SMTP_PASS in environment variables.",
+    }, { status: 400 });
+  }
+
+  try {
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST || "smtp.gmail.com",
+      port: Number(process.env.SMTP_PORT) || 587,
+      secure: false,
+      auth: { user: smtpUser, pass: smtpPass },
+    });
 
     const fieldRows = Object.entries(fields)
       .filter(([, value]) => value)
@@ -30,9 +41,9 @@ export async function POST(request: Request) {
         ? "New Quote Request - Mohancon Builds"
         : "New Enquiry - Mohancon Builds";
 
-    const mailOptions = {
-      from: process.env.SMTP_USER,
-      to: process.env.CONTACT_EMAIL_TO || "sales@mohanconbuilds.co.in",
+    await transporter.sendMail({
+      from: smtpUser,
+      to: process.env.CONTACT_EMAIL_TO || "pranjal@mohanconbuilds.co.in",
       subject,
       html: `
         <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto">
@@ -43,16 +54,15 @@ export async function POST(request: Request) {
           <p style="color:#666;margin-top:24px;font-size:12px">Sent from Mohancon Builds website contact form</p>
         </div>
       `,
-    };
+    });
 
-    await transporter.sendMail(mailOptions);
-
-    return NextResponse.json({ success: true, message: "Email sent successfully" });
+    return NextResponse.json({ success: true, message: "Thank you! We will get back to you soon." });
   } catch (error) {
-    console.error("Contact form error:", error);
-    return NextResponse.json(
-      { success: false, message: "Failed to send email. Please try again later." },
-      { status: 500 }
-    );
+    console.error("Email send failed:", error instanceof Error ? error.message : error);
+
+    return NextResponse.json({
+      success: false,
+      message: "Failed to send message. Please try again later.",
+    }, { status: 500 });
   }
 }
